@@ -17,7 +17,7 @@ class FeedsController < ApplicationController
   end
 
   def confirm
-    @feed = Feed.new(feed_params)
+    @feed = current_user.feeds.build(feed_params)
     render :new if @feed.invalid?
   end
 
@@ -25,8 +25,7 @@ class FeedsController < ApplicationController
   end
 
   def create
-    @feed = Feed.new(feed_params)
-
+    @feed = current_user.feeds.build(feed_params)
     respond_to do |format|
       if @feed.save
         format.html { redirect_to @feed, notice: '投稿されました' }

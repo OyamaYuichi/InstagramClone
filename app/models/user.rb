@@ -11,4 +11,6 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 6 }, on: :create
 
   validates :name, length: { maximum: 255 }
+
+  has_many :feeds
 end
