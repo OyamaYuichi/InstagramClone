@@ -1,0 +1,24 @@
+<h1>favorites</h1>
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>Image</th>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+<% @favorites.each do |favorite| %>
+      <tr>
+        <td><%= favorite.feed.user.name %></td>
+        <td><%= image_tag favorite.feed.image.url %></td>
+        <td><%= favorite.feed.content %></td>
+        <td><%= link_to 'Show', favorite %></td>
+        <td><%= link_to 'Destroy', favorite, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+<% end %>
+</tbody>
+</table>
+<%= link_to "ホームに戻る", feeds_path %>

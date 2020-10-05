@@ -48,3 +48,5 @@ gem 'bcrypt', '3.1.11'
 gem 'jquery-rails'
 
 gem 'dotenv-rails'
+
+gem 'solargraph', group: :development
