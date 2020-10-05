@@ -20,6 +20,9 @@ class UsersController < ApplicationController
   end
 
   def show
+    unless logged_in?
+      authenticate_user
+    end
   end
 
   def edit
