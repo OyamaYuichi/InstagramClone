@@ -13,4 +13,6 @@ class User < ApplicationRecord
   validates :name, length: { maximum: 255 }
 
   has_many :feeds
+
+  has_many :favorites, dependent: :destroy
 end
