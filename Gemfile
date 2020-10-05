@@ -50,3 +50,7 @@ gem 'jquery-rails'
 gem 'dotenv-rails'
 
 gem 'solargraph', group: :development
+
+group :development do
+  gem 'letter_opener_web'
+end
