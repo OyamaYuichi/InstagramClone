@@ -8,14 +8,24 @@
     </ul>
   </div>
 <% end %>
-<%= form_with(model: @user, local: true) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :email %>
-  <%= f.email_field :email %>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
-  <%= f.submit "新規作成" %>
-<% end %>
+<div class="center">
+  <%= form_with(model: @user, local: true) do |f| %>
+  <div id="label-name">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div id="label-email">
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+  </div>
+  <div id="label-password">
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    </div>
+  <div id="label-password-confirmation">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  </div>
+    <p id="new-create"><%= f.submit "新規作成" %></p>
+  <% end %>
+</div>
