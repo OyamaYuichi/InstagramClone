@@ -33,12 +33,14 @@
     <div class="show-feed">
       <% unless @feed.user_id == current_user.id %>
         <% if @favorite.present? %>
-          <%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
+          <%= link_to 'お気に入り', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-warning favorite-btn' %>
         <% else %>
-          <%= link_to 'お気に入りする', favorites_path(feed_id: @feed.id), method: :post, class: 'btn btn-primary' %>
+          <%= link_to 'お気に入り', favorites_path(feed_id: @feed.id), method: :post, class: 'btn btn-default favorite-btn' %>
         <% end %>
       <% end %>
+    </div>
 
+    <div class="show-feed">
       <ol class="breadcrumb show-nav">
         <li><%= link_to 'ホーム', feeds_path %></li>
       <% if current_user == @feed.user %>
@@ -46,8 +48,6 @@
         <li><%= link_to '削除', @feed, method: :delete, data: { confirm: 'Are you sure?' } %></li>
       <% end %>
       </ol>
-
-        
     </div>
 
     </div>
