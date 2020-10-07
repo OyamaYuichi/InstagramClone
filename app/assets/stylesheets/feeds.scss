@@ -35,3 +35,44 @@
   // background-color: #000;
   // border-radius: 10px;
 }
+.fence{
+  border: solid 5px #000;
+  border-radius: 10px;
+}
+
+.show-feed{
+  text-align: center;
+}
+#feed-image img{
+  width: 80%;
+}
+#feed-round-image img{
+  border-radius: 50%;
+  width: 50px;
+}
+#feed-profile-user{
+  margin-top: 10px;
+}
+
+#show-sentence{
+  padding: 0.5em 1em;
+  margin:  0;
+  // color: #5d627b;
+  background: white;
+  // border-top: solid 5px #5d627b;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  width: 80%;
+  margin-left: 10%;
+}
+#show-content{
+  // float: left;
+  margin: 0; 
+  padding: 0;
+  word-break: break-all;
+}
+
+.show-nav{
+  width: 80%;
+  margin-top: 30px;
+  margin-left: 10%;
+}

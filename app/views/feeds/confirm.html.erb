@@ -51,7 +51,7 @@
         </li>
       </ol>
 
-      
+      <div class="fence">
       <div class="confirm-main">
         <h1>確認画面</h1>
         <%= form_with(model: @feed, url: feeds_path, local: true) do |form| %>
@@ -72,8 +72,10 @@
           <p><%= form.submit "戻る", name: "back" %></p>
         <% end %>
       </div>
-        
+
       </div>
+      </div>
+
     </div>
 
   <div class="col-md-2"></div>

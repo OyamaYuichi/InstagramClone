@@ -56,7 +56,7 @@
 
         <% @favorites.each do |favorite| %>
 
-        <span id="my-image"><%= image_tag favorite.feed.image.url %></span>
+        <span id="my-image"><%= link_to image_tag(favorite.feed.image.url), favorite.feed %></span>
 
         <% end %>
       </div>

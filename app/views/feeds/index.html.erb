@@ -1,5 +1,16 @@
 <p id="notice"><%= notice %></p>
 
+
+      <div id="header-right">
+        <% if logged_in? %>
+          <span class="label label-info"><%= link_to "プロフィール", user_path(current_user.id) %></span>
+          <span class="label label-danger"><%= link_to "ログアウト", session_path(current_user.id), method: :delete %></span>
+        <% else %>
+          <span class="label label-primary"><%= link_to "新規登録", new_user_path %></span>
+          <span class="label label-success"><%= link_to "ログイン", new_session_path %></span>
+        <% end %>
+      </div>
+
 <h1>Feeds</h1>
 
 <table>
