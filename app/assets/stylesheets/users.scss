@@ -66,6 +66,13 @@ body{
   color: #FFF;
 }
 
+.label-warning{
+  padding: 10px;
+}
+.label-warning a{
+  color: #FFF;
+}
+
 .entry{
   /* font-family: Hiragino Mincho ProN; */
   font-weight: bold;
@@ -122,4 +129,63 @@ body{
   -1px 1px 0 #FFF, 1px -1px 0 #FFF,
   0px 1px 0 #FFF,  0-1px 0 #FFF,
   -1px 0 0 #FFF, 1px 0 0 #FFF;
+}
+
+#round-image img{
+  border-radius: 50%;
+}
+p #my-image{
+  margin: 0;
+}
+#my-image img{
+  width: 248px;
+  height: 248px;
+  // float: left;
+  margin: 1px;
+  // clear: both;
+  // border: solid 3px #FFF;
+  // flex-direction: row;
+  // display: inline-block;
+  // display: flex;
+  // flex-wrap: wrap;
+  // display: table;
+  
+}
+.flex{
+  display: flex;
+  // flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+table{
+  margin-bottom: 10px;
+  margin-left: 100px;
+}
+
+.breadcrumb{
+  text-align: center;
+}
+#profile{
+  padding-left: 30px;
+}
+td #profile{
+  padding-top: 0;
+}
+#profile-user{
+  margin-top: 0;
+}
+#profile-content{
+  word-break: break-all;
+}
+#profile-email{
+  margin-bottom: 17px;
+}
+.main{
+  // background-color: red;
+  border-radius: 10px;
+}
+#header-right{
+  float: right;
+  // margin-top: 5px;
 }

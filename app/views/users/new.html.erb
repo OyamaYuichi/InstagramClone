@@ -7,7 +7,7 @@
     <% if logged_in? %>
       <%
 =begin%>
- <%= current_user.name %> 
+ <%= current_user.name %>
 <%
 =end%>
       <span class="label label-info"><%= link_to "Profile", user_path(current_user.id) %></span>
@@ -22,4 +22,3 @@
 <br>
 <br>
 </div>
-

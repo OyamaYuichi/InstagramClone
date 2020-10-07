@@ -23,6 +23,7 @@ class UsersController < ApplicationController
     unless logged_in?
       authenticate_user
     end
+    @feeds = Feed.where(user_id:@user.id).order(created_at: :desc)
   end
 
   def edit

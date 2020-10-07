@@ -1,12 +1,68 @@
-<h1><%= @user.name %>のページ</h1>
 
-<% if @user.profile_image.url != nil%>
-  <%= image_tag(@user.profile_image.url) %>
-<% end %>
-<p>メールアドレス: <%= @user.email %></p>
-<%= @user.profile_content %>
-<%= link_to 'プロフィールを編集', edit_user_path(@user) %>
-<%= link_to 'アカウントを削除', user_path(@user), method: :delete, data: { confirm: 'アカウントを削除しますか?' } %>
-<%= link_to '投稿する', new_feed_path %>
-<%= link_to "ホームに戻る", feeds_path %>
-<%= link_to "お気に入り", favorites_path %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-2"></div>
+
+      <div class="col-md-8 main">
+      <% flash.each do |key, value| %>
+        <%= content_tag(:div, value, class: "#{key}") %>
+      <% end %>
+
+      <div id="header-right">
+        <% if logged_in? %>
+          <span class="label label-info"><%= link_to "Profile", user_path(current_user.id) %></span>
+          <span class="label label-danger"><%= link_to "Logout", session_path(current_user.id), method: :delete %></span>
+        <% else %>
+          <span class="label label-primary"><%= link_to "Sign up", new_user_path %></span>
+          <span class="label label-success"><%= link_to "Login", new_session_path %></span>
+        <% end %>
+      </div>
+
+      <table>
+        <tr>
+          <td>
+          <% if @user.profile_image.url != nil%>
+            <span id="round-image"><%= image_tag(@user.profile_image.thumb.url) %></span>
+          <% end %>
+          </td>
+          <td id="profile">
+            <h1 id="profile-user"><%= @user.name %></h1>
+            <h4 id="profile-email"><%= @user.email %></h4>
+            <p id=profile-content><%= @user.profile_content %></p>
+          </td>
+        </tr>
+      </table>
+
+
+
+      <ol class="breadcrumb">
+        <li>
+          <%= link_to "ホーム", feeds_path %>
+        </li>
+        <li>
+          <%= link_to '投稿する', new_feed_path %>
+        </li>
+        <li>
+          <%= link_to "お気に入り", favorites_path %>
+        </li>
+        <li>
+          <%= link_to 'プロフィール編集', edit_user_path(@user) %>
+        </li>
+        <li>
+          <%= link_to 'アカウント削除', user_path(@user), method: :delete, data: { confirm: 'アカウントを削除しますか?' } %>
+        </li>
+      </ol>
+
+      <div class="flex">
+        <% @feeds.each do |feed| %>
+          <span id="my-image"><%= link_to image_tag(feed.image.url), feed %></span>
+        <% end %>
+      </div>
+
+
+      </div>
+
+    <div class="col-md-2"></div>
+  </div>
+</div>
+
