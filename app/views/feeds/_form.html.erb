@@ -14,7 +14,7 @@
 
     <div class="field">
       <%= form.label :image %>
-      <%= image_tag(@feed.image.url) if @feed.image && @feed.image.url %>
+      <p id="edit-image"><%= image_tag(@feed.image.url) if @feed.image && @feed.image.url %></p>
       <%= form.file_field :image %>
       <%= form.hidden_field :image_cache %>
     </div>
@@ -28,5 +28,5 @@
       <%= form.submit %>
     </div>
   <% end %>
-  <%= link_to '戻る', @user %>
+  
 </div>

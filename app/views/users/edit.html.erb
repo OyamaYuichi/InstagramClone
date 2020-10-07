@@ -41,7 +41,7 @@
           <%= link_to '投稿する', new_feed_path %>
         </li>
         <li>
-          <%= link_to "お気に入り", favorites_path %>
+          <%= link_to "お気に入り", favorites_path(user_id: @user.id) %>
         </li>
         <li id="favorite">
           <%= link_to 'プロフィール編集', edit_user_path(@user) %>

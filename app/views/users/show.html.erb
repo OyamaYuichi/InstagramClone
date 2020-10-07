@@ -7,6 +7,7 @@
         <%= content_tag(:div, value, class: "#{key}") %>
       <% end %>
 
+    <% if current_user == @user%>
       <div id="header-right">
         <% if logged_in? %>
           <span class="label label-info"><%= link_to "プロフィール", user_path(current_user.id) %></span>
@@ -16,6 +17,7 @@
           <span class="label label-success"><%= link_to "ログイン", new_session_path %></span>
         <% end %>
       </div>
+    <% end %>
 
       <table>
         <tr>
@@ -33,7 +35,7 @@
       </table>
 
 
-
+    <% if current_user == @user%>
       <ol class="breadcrumb">
         <li>
           <%= link_to "ホーム", feeds_path %>
@@ -42,7 +44,7 @@
           <%= link_to '投稿する', new_feed_path %>
         </li>
         <li>
-          <%= link_to "お気に入り", favorites_path %>
+          <%= link_to "お気に入り", favorites_path(user_id: @user.id) %>
         </li>
         <li>
           <%= link_to 'プロフィール編集', edit_user_path(@user) %>
@@ -51,6 +53,16 @@
           <%= link_to 'アカウント削除', user_path(@user), method: :delete, data: { confirm: 'アカウントを削除しますか?' } %>
         </li>
       </ol>
+    <% else %>
+      <ol class="breadcrumb">
+        <li id="favorite">
+          <%= link_to '投稿', new_feed_path(user_id: @user.id) %>
+        </li>
+        <li>
+          <%= link_to "お気に入り", favorites_path(user_id: @user.id) %>
+        </li>
+      </ol>
+    <% end %>
 
       <div class="flex">
         <% @feeds.each do |feed| %>
