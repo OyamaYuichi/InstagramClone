@@ -1,7 +1,8 @@
 class FavoritesController < ApplicationController
-
+  
   def index
     @favorites = current_user.favorites
+    @user = User.find(current_user.id)
   end
   
   def create
@@ -13,4 +14,6 @@ class FavoritesController < ApplicationController
     favorite = current_user.favorites.find_by(id: params[:id]).destroy
     redirect_to feeds_url, notice: "#{favorite.feed.user.name}さんの投稿のいいね！を解除しました"
   end
+
+  
 end
