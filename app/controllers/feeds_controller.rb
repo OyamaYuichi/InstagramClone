@@ -21,6 +21,7 @@ class FeedsController < ApplicationController
 
   def confirm
     @feed = current_user.feeds.build(feed_params)
+    @user = User.find(current_user.id)
     render :new if @feed.invalid?
   end
 

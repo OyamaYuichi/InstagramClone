@@ -8,3 +8,30 @@
   width: 400px;
   height: 200px;
 }
+#confirm-sentence{
+  padding: 0.5em 1em;
+  margin:  0;
+  color: #5d627b;
+  background: white;
+  border-top: solid 5px #5d627b;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  width: 400px;
+  margin-left: 23.3%;
+}
+// .box11 p {
+//   margin: 0; 
+//   padding: 0;
+// }
+#confirm-content{
+  // float: left;
+  margin: 0; 
+  padding: 0;
+  word-break: break-all;
+}
+.confirm-main{
+  text-align: center;
+  margin-top: 6%;
+  
+  // background-color: #000;
+  // border-radius: 10px;
+}
