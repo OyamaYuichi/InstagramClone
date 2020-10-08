@@ -1,3 +1,45 @@
+<header>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid users-new">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#gnavi">
+          <span class="sr-only">Twilight Hour</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <a class="navbar-brand text-fence" href="http://localhost:3000">Twilight Hour</a>
+
+      </div>
+      <div id="gnavi" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <% if logged_in? %>
+            <li>
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="検索">
+                    <span class="input-group-btn">
+                      <button class="btn btn-default" type="button">🔍</button>
+                    </span>
+                  </div><!-- /input-group -->
+                </div><!-- /.col-lg-6 -->
+              </div><!-- /.row -->
+            </li>
+            <li class="user text-fence"><%= link_to current_user.name, user_path(current_user.id) %></li>
+            <li class="text-fence"><%= link_to "ホーム", feeds_path %></li>
+            <li class="text-fence"><%= link_to '投稿', new_feed_path %></li>
+            <li class="text-fence"><%= link_to "ログアウト", session_path(current_user.id), method: :delete ,data: { confirm: 'ログアウトしますか？' }%></li>
+          <% else %>
+            <li class="text-fence"><%= link_to "新規登録", new_user_path %></li>
+            <li class="text-fence"><%= link_to "ログイン", new_session_path %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
 <div class="main-header">
   <h1 id="title">Twilight Hour</h1>
   <div class="header">
