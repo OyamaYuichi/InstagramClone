@@ -45,11 +45,6 @@
   <div class="header">
 
     <% if logged_in? %>
-      <%
-=begin%>
- <%= current_user.name %> 
-<%
-=end%>
       <span class="label label-info"><%= link_to "プロフィール", user_path(current_user.id) %></span>
       <span class="label label-danger"><%= link_to "ログアウト", session_path(current_user.id), method: :delete %></span>
     <% else %>

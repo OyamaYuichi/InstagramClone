@@ -47,16 +47,11 @@
       <% flash.each do |key, value| %>
         <%= content_tag(:div, value, class: "#{key}") %>
       <% end %>
-
-      
-
-<h1>投稿を編集</h1>
-
-<%= render 'form', feed: @feed %>
-
-<%= link_to '戻る', @feed %>
-
-
+      <div class="feed-main">
+        <h1>投稿を編集</h1>
+        <%= render 'form', feed: @feed %>
+        <%= link_to '戻る', @feed %>
+      </div>
     </div>
     <div class="col-md-2"></div>
   </div>
