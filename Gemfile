@@ -54,3 +54,5 @@ gem 'solargraph', group: :development
 group :development do
   gem 'letter_opener_web'
 end
+
+gem 'faker'
