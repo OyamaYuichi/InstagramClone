@@ -2,22 +2,24 @@
   <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-8 main ">
+    <div class="feed-main">
       <% flash.each do |key, value| %>
         <%= content_tag(:div, value, class: "#{key}") %>
       <% end %>
-    
-      <table>
-        <tr>
-          <td>
-          <% if @user.profile_image.url != nil%>
-            <span id="feed-round-image"><%= image_tag(@user.profile_image.thumb.url) %></span>
-          <% end %>
-          </td>
-          <td id="profile">
-            <h2 id="feed-profile-user"><%= link_to @user.name, user_path(@feed.user.id) %></h2>
-          </td>
-        </tr>
-      </table>
+      <div class="feed-table">
+        <table>
+          <tr>
+            <td>
+            <% if @user.profile_image.url != nil%>
+              <span id="feed-round-image"><%= image_tag(@user.profile_image.thumb.url) %></span>
+            <% end %>
+            </td>
+            <td id="profile">
+              <h2 id="feed-profile-user"><%= link_to @user.name, user_path(@feed.user.id) %></h2>
+            </td>
+          </tr>
+        </table>
+      </div>
     <div class="show-feed">
       <p id="feed-image">
         <%= image_tag @feed.image.url %>
@@ -40,6 +42,10 @@
       <% end %>
     </div>
 
+    <div class="create-time">
+      <%= @feed.created_at.to_s(:datetime_jp) %>
+    </div>
+
     <div class="show-feed">
       <ol class="breadcrumb show-nav">
         <li><%= link_to 'ホーム', feeds_path %></li>
@@ -49,7 +55,8 @@
       <% end %>
       </ol>
     </div>
-
+    
+    </div>
     </div>
     <div class="col-md-2"></div>
 

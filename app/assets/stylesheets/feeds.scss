@@ -28,6 +28,7 @@
   padding: 0;
   word-break: break-all;
 }
+
 .confirm-main{
   text-align: center;
   margin-top: 6%;
@@ -46,7 +47,6 @@
 #feed-image img{
   width: 80%;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
-
 }
 #feed-round-image img{
   border-radius: 50%;
@@ -99,4 +99,12 @@
   width: 80%;
   margin-left: 10%;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.22);
+}
+#confirm-image img{
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+}
+.create-time{
+  text-align: center;
+  margin-top: 15px;
+  color: gray;
 }

@@ -55,11 +55,11 @@
       <div class="confirm-main">
         <h1>確認画面</h1>
         <%= form_with(model: @feed, url: feeds_path, local: true) do |form| %>
-          <p><%= image_tag(@feed.image.url) if @feed.image && @feed.image.url %></p>
+          <p id="feed-image"><%= image_tag(@feed.image.url) if @feed.image && @feed.image.url %></p>
           <p><%= form.hidden_field :image_cache %></p>
       </div>
-      <div id="confirm-sentence">
-          <p id="confirm-content"><%= @feed.content %></p>
+      <div id="show-sentence">
+          <p id="show-content"><%= @feed.content %></p>
           <p><%= form.hidden_field :content %></p>
       </div>
 
