@@ -4,8 +4,10 @@ class FeedsController < ApplicationController
 
   def index
     @feeds = Feed.all.order(created_at: :desc)
+    # @user = User.find(current_user.id)
+    # @favorites = current_user.favorites
   end
-
+  
   def show
     @favorite = current_user.favorites.find_by(feed_id: @feed.id)
     @user = User.find(@feed.user.id)
