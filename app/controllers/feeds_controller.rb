@@ -16,6 +16,7 @@ class FeedsController < ApplicationController
   def new
     if params[:back]
       @feed = Feed.new(feed_params)
+      @user = User.find(current_user.id)
     else
       @feed = Feed.new
       @user = User.find(current_user.id)
