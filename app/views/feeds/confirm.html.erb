@@ -110,6 +110,7 @@
         <% end %>
 
         <%= form_with(model:@feed, url:new_feed_path, local:true, method:"get") do |form| %>
+          <p><%= form.hidden_field :content %></p>
           <p><%= form.hidden_field :image_cache %></p>
           <p><%= form.submit "戻る", name: "back" %></p>
         <% end %>
